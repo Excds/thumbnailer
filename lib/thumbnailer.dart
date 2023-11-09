@@ -428,7 +428,7 @@ class ThumbnailState extends State<Thumbnail> {
       widget.mimeType,
       '/',
     );
-    if (generationStrategyFunction != null) {
+    if (!(widget.onlyIcon ?? false) && generationStrategyFunction != null) {
       assert(widget.dataResolver != null);
       _thumbnailFuture = generationStrategyFunction(
         widget.name,
